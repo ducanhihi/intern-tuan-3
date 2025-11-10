@@ -26,17 +26,11 @@ cd intern-tuan-3
 Tạo database
 
 Mở MySQL, chạy file SQL có sẵn trong thư mục database (ví dụ database.sql) để tạo database và bảng:
-
-sql
-Sao chép mã
 -- Mở MySQL và chạy:
 source path/to/database.sql;
 Cấu hình kết nối database
 
 Mở file config/database.php và chỉnh sửa thông tin kết nối:
-
-php
-Sao chép mã
 <?php
 class Database {
     private $host = "localhost";
@@ -53,8 +47,6 @@ Chạy dự án
 Mở trình duyệt, truy cập vào đường dẫn dự án (ví dụ http://localhost/intern-tuan-3/index.php)
 
 Cấu trúc thư mục
-bash
-Sao chép mã
 intern-tuan-3/
 │
 ├─ config/          # File cấu hình database
@@ -65,12 +57,9 @@ intern-tuan-3/
 └─ index.php        # Entry point
 Sử dụng
 Thêm, sửa, xoá sản phẩm
-
 Xem danh sách sản phẩm
-
 Tìm kiếm sản phẩm theo yêu cầu
 
 Lưu ý
 Đảm bảo MySQL đang chạy
-
 Chỉnh sửa config/database.php nếu tên database hoặc thông tin đăng nhập khác
