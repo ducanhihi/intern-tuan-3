@@ -1,46 +1,76 @@
-# Intern Tuần 3
+# Intern Tuan 3 Project
 
-> Dự án tuần 3 của khoá internship – phần frontend & backend nhỏ được triển khai bằng PHP, CSS, JavaScript.
+Đây là dự án thực hành PHP + MySQL cho khoá thực tập tuần 3.
 
 ## Mô tả
-Repository này chứa mã nguồn của bài thực hành tuần 3, gồm:
-- Thư mục `config/`: cấu hình kết nối, môi trường.
-- Thư mục `controllers/`: các class/controller xử lý logic chính.
-- Thư mục `models/`: các class/model DB hoặc business logic.
-- Thư mục `public/`: tài nguyên công khai như CSS, JavaScript, hình ảnh.
-- Thư mục `views/`: các file giao diện (templates, pages).
-- File `index.php`: điểm vào (entry point) của ứng dụng.
 
-## Công nghệ sử dụng
-- PHP (chủ đạo)  
-- CSS để tạo giao diện cơ bản  
-- JavaScript để thêm tương tác trên frontend  
+Dự án này bao gồm:
 
-## Cài đặt & chạy
-1. Clone repository:
-   ```bash
-   git clone https://github.com/ducanhihi/intern-tuan-3.git
-Cấu hình môi trường:
+- Quản lý sản phẩm (thêm, sửa, xoá, hiển thị danh sách)
+- Giao diện web cơ bản với HTML, CSS, JS
+- Kết nối database MySQL
 
-Sao chép thư mục config/ hoặc file mẫu (nếu có) và sửa thông số DB, host, user, pass.
+## Yêu cầu
 
-Thiết lập database: (nếu có script/migration)
+- PHP >= 7.4
+- MySQL
+- Trình duyệt web hiện đại (Chrome, Firefox, Edge...)
 
-Import file SQL hoặc tạo các bảng theo models/.
+## Cài đặt
 
-Trỏ server Web (Apache/Nginx) về thư mục public/ hoặc cấu hình index.php là entry.
+1. **Clone repository**
 
-Mở trình duyệt và truy cập http://localhost/… (tuỳ cấu hình) để xem ứng dụng.
+```bash
+git clone https://github.com/ducanhihi/intern-tuan-3.git
+cd intern-tuan-3
+Tạo database
+
+Mở MySQL, chạy file SQL có sẵn trong thư mục database (ví dụ database.sql) để tạo database và bảng:
+
+sql
+Sao chép mã
+-- Mở MySQL và chạy:
+source path/to/database.sql;
+Cấu hình kết nối database
+
+Mở file config/database.php và chỉnh sửa thông tin kết nối:
+
+php
+Sao chép mã
+<?php
+class Database {
+    private $host = "localhost";
+    private $db_name = "ten_database";
+    private $username = "root";
+    private $password = "";
+
+    public function connect() {
+        // ...
+    }
+}
+Chạy dự án
+
+Mở trình duyệt, truy cập vào đường dẫn dự án (ví dụ http://localhost/intern-tuan-3/index.php)
 
 Cấu trúc thư mục
-csharp
+bash
 Sao chép mã
 intern-tuan-3/
 │
-├── config/       # Cấu hình ứng dụng
-├── controllers/  # Xử lý logic chính
-├── models/       # Đối tượng business, mô hình dữ liệu
-├── public/       # CSS, JS, hình ảnh, tài nguyên công khai
-├── views/        # Giao diện người dùng
-└── index.php     # Entry point
-Hướng dẫn đóng góp
+├─ config/          # File cấu hình database
+├─ models/          # Các model PHP
+├─ controllers/     # Các controller PHP
+├─ views/           # Giao diện HTML
+├─ database/        # File SQL tạo database
+└─ index.php        # Entry point
+Sử dụng
+Thêm, sửa, xoá sản phẩm
+
+Xem danh sách sản phẩm
+
+Tìm kiếm sản phẩm theo yêu cầu
+
+Lưu ý
+Đảm bảo MySQL đang chạy
+
+Chỉnh sửa config/database.php nếu tên database hoặc thông tin đăng nhập khác
